@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One of A Kind Group</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Inter (body) + Playfair Display (headings) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <script>
+    /* Brand tokens — Navy + Copper palette */
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            navy: {
+              DEFAULT: '#04152b',
+              mid: '#072144',
+              light: '#0d3060',
+            },
+            copper: {
+              DEFAULT: '#c48259',
+              light: '#d9a07a',
+              muted: '#9e6340',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Nav underline animation — copper */
+    .nav-link::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 0;
+      background: #c48259;
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* Copper shimmer on hero headline accent */
+    .copper-accent {
+      background: linear-gradient(90deg, #c48259 0%, #e8b88a 50%, #c48259 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Company card lift effect */
+    .company-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .company-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 48px rgba(4, 21, 43, 0.15);
+    }
+
+    /* Ornament divider with copper lines */
+    .ornament-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .ornament-divider::before,
+    .ornament-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #c48259;
+      opacity: 0.35;
+    }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-navy antialiased">
+
+  <!-- ============================================================
+       HEADER / NAVIGATION
+  ============================================================ -->
+  <header id="top" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-gray-200"
+    style="background-color: rgba(250,250,250,0.97); transition: transform 0.3s ease;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-16">
+
+      <!-- Logo -->
+      <a href="#top" class="flex items-center gap-3">
+        <img src="1oak Logo copy.png" alt="One of A Kind Group" class="h-10 w-auto" />
+        <span class="font-serif font-semibold text-lg tracking-wide leading-tight" style="color: #04152b;">
+          One of A Kind <span style="color: #d9a07a;">Group</span>
+        </span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#about"
+          class="nav-link text-gray-500 hover:text-navy text-sm font-medium tracking-wider uppercase transition-colors duration-200">About</a>
+        <a href="#companies"
+          class="nav-link text-gray-500 hover:text-navy text-sm font-medium tracking-wider uppercase transition-colors duration-200">Our
+          Companies</a>
+        <a href="#contact"
+          class="nav-link text-gray-500 hover:text-navy text-sm font-medium tracking-wider uppercase transition-colors duration-200">Contact</a>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <div class="md:hidden flex flex-col gap-1.5 p-1 cursor-pointer">
+        <span class="block w-6 h-px bg-gray-600"></span>
+        <span class="block w-6 h-px bg-gray-600"></span>
+        <span class="block w-4 h-px bg-gray-600"></span>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16"
+    style="background: linear-gradient(140deg, #04152b 0%, #072144 60%, #04152b 100%);">
+    <!-- Subtle radial glow — copper tint -->
+    <div class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(ellipse 65% 50% at 50% 45%, rgba(196,130,89,0.07) 0%, transparent 70%);"></div>
+
+    <!-- Decorative side rules -->
+    <div class="absolute top-1/3 left-0 w-24 lg:w-40 h-px opacity-20" style="background-color: #c48259;"></div>
+    <div class="absolute top-1/3 right-0 w-24 lg:w-40 h-px opacity-20" style="background-color: #c48259;"></div>
+
+    <!-- Hero content -->
+    <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center">
+
+      <!-- Eyebrow -->
+      <p class="text-xs font-semibold tracking-[0.25em] uppercase mb-6 opacity-75" style="color: #d9a07a;">
+        Established 1965
+      </p>
+
+      <!-- Headline -->
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+        One Standard<br />
+        of <span class="copper-accent">Excellence</span>
+      </h1>
+
+      <!-- Sub-headline -->
+      <p class="text-gray-400 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-10">
+        One of A Kind Group is the parent organization for a family of wholly-founded companies spanning luxury retail,
+        wealth management, strategic consulting, aesthetics, and more. Five distinct brands. One operating standard.
+      </p>
+
+      <!-- CTA -->
+      <a href="#companies"
+        class="inline-block px-8 py-3.5 font-semibold text-sm tracking-widest uppercase rounded-sm transition-colors duration-300 text-white"
+        style="background-color: #c48259;" onmouseover="this.style.backgroundColor='#d9a07a'"
+        onmouseout="this.style.backgroundColor='#c48259'">
+        Explore Our Companies
+      </a>
+
+      <!-- Scroll indicator -->
+      <div class="mt-20 flex justify-center">
+        <div class="w-px h-12 animate-pulse"
+          style="background: linear-gradient(to bottom, rgba(196,130,89,0.6), transparent);"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <!-- ============================================================
+       OUR COMPANIES DIRECTORY
+  ============================================================ -->
+  <section id="companies" class="py-28 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <!-- Section label -->
+      <div class="ornament-divider mb-10">
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap" style="color: #c48259;">Our
+          Companies</p>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-navy mb-4 leading-snug">
+        Five Brands. One Family.
+      </h2>
+      <p class="text-gray-500 text-base max-w-xl mb-14">
+        Each company is wholly founded and actively operated by One of A Kind Group — built for long-term value,
+        high-level execution, and clients who expect more.
+      </p>
+
+      <!-- Card Grid — 6-col base so last 2 cards center in their row -->
+      <div class="grid md:grid-cols-6 gap-8">
+
+        <!-- ── Card 1: One of A Kind Jewelry ── -->
+        <article
+          class="company-card bg-white rounded-sm border border-gray-100 flex flex-col overflow-hidden shadow-sm md:col-span-2">
+          <!-- Top accent bar — copper -->
+          <div class="h-1 w-full" style="background: linear-gradient(to right, #9e6340, #c48259, #d9a07a);"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Logo -->
+            <div class="mb-6 h-14 flex items-center">
+              <img src="1oak Logo copy.png" alt="One of A Kind Jewelry" class="h-full w-auto object-contain" />
+            </div>
+            <!-- Tag -->
+            <span class="text-xs font-semibold tracking-widest uppercase mb-3" style="color: #c48259;">Luxury
+              Retail</span>
+            <!-- Name -->
+            <h3 class="font-serif text-2xl font-bold text-navy mb-4 leading-snug">One of A Kind Jewelry</h3>
+            <!-- Description -->
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">
+              Specializing in bespoke, handcrafted jewelry that transforms personal milestones into enduring works of
+              art. Every piece is designed with meticulous attention to detail, sourced from the finest materials, and
+              made exclusively to the client's vision — never mass-produced, never repeated.
+            </p>
+            <!-- CTA -->
+            <a href="https://oneofakind.jewelry/" target="_blank" rel="noopener noreferrer"
+              class="mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase pb-0.5 self-start transition-colors duration-200"
+              style="color: #04152b; border-bottom: 1px solid rgba(4,21,43,0.2);"
+              onmouseover="this.style.color='#c48259'; this.style.borderBottomColor='#c48259';"
+              onmouseout="this.style.color='#04152b'; this.style.borderBottomColor='rgba(4,21,43,0.2)';">
+              Visit Website
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Card 2: EVS Financial Services ── -->
+        <article
+          class="company-card bg-white rounded-sm border border-gray-100 flex flex-col overflow-hidden shadow-sm md:col-span-2">
+          <div class="h-1 w-full" style="background: linear-gradient(to right, #9e6340, #c48259, #d9a07a);"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Logo -->
+            <div class="mb-6 h-14 flex items-center">
+              <img src="evs top logo.png" alt="EVS Financial Services" class="h-full w-auto object-contain" />
+            </div>
+            <span class="text-xs font-semibold tracking-widest uppercase mb-3" style="color: #c48259;">Wealth &amp;
+              Finance</span>
+            <h3 class="font-serif text-2xl font-bold text-navy mb-4 leading-snug">EVS Financial Services</h3>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">
+              Delivering comprehensive, tailored financial planning and wealth management built around each client's
+              unique goals, timeline, and circumstances. EVS operates on the belief that a financial plan should reflect
+              the person it serves — not a generic template.
+            </p>
+            <a href="https://evsfinance.com" target="_blank" rel="noopener noreferrer"
+              class="mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase pb-0.5 self-start transition-colors duration-200"
+              style="color: #04152b; border-bottom: 1px solid rgba(4,21,43,0.2);"
+              onmouseover="this.style.color='#c48259'; this.style.borderBottomColor='#c48259';"
+              onmouseout="this.style.color='#04152b'; this.style.borderBottomColor='rgba(4,21,43,0.2)';">
+              Visit Website
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Card 3: Eliyahu Cohen Consulting ── -->
+        <article
+          class="company-card bg-white rounded-sm border border-gray-100 flex flex-col overflow-hidden shadow-sm md:col-span-2">
+          <div class="h-1 w-full" style="background: linear-gradient(to right, #9e6340, #c48259, #d9a07a);"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <div class="w-12 h-12 rounded-sm flex items-center justify-center mb-6" style="background-color: #04152b;">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="#d9a07a"
+                stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
+              </svg>
+            </div>
+            <span class="text-xs font-semibold tracking-widest uppercase mb-3" style="color: #c48259;">Business Strategy
+              &amp; Growth</span>
+            <h3 class="font-serif text-2xl font-bold text-navy mb-4 leading-snug">Eliyahu Cohen Consulting</h3>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">
+              Providing high-level business strategy, sales architecture, and growth consulting to founders and
+              executives ready to scale with purpose. Eliyahu Cohen Consulting works directly with leadership to build
+              systems, sharpen positioning, and drive measurable, lasting results.
+            </p>
+            <a href="https://eliyahuconsulting.netlify.app" target="_blank" rel="noopener noreferrer"
+              class="mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase pb-0.5 self-start transition-colors duration-200"
+              style="color: #04152b; border-bottom: 1px solid rgba(4,21,43,0.2);"
+              onmouseover="this.style.color='#c48259'; this.style.borderBottomColor='#c48259';"
+              onmouseout="this.style.color='#04152b'; this.style.borderBottomColor='rgba(4,21,43,0.2)';">
+              Visit Website
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Card 4: Blush 'N Beauty Medspa ── -->
+        <article
+          class="company-card bg-white rounded-sm border border-gray-100 flex flex-col overflow-hidden shadow-sm md:col-span-2 md:col-start-2">
+          <div class="h-1 w-full" style="background: linear-gradient(to right, #9e6340, #c48259, #d9a07a);"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Logo — dark pill underlay for white logo contrast -->
+            <div class="mb-6 h-14 flex items-center">
+              <div class="h-full px-4 flex items-center rounded-sm" style="background-color: #04152b;">
+                <img src="bnb Logo.webp" alt="Blush 'N Beauty Medspa" class="h-full w-auto object-contain py-1.5" />
+              </div>
+            </div>
+            <span class="text-xs font-semibold tracking-widest uppercase mb-3" style="color: #c48259;">MedSpa &amp;
+              Aesthetics</span>
+            <h3 class="font-serif text-2xl font-bold text-navy mb-4 leading-snug">Blush 'N Beauty Medspa</h3>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">
+              A premium medical spa delivering results-driven aesthetic treatments — from rejuvenating facials and
+              precision waxing to advanced laser therapies and expertly administered injectables. Blush 'N Beauty blends
+              clinical expertise with a luxury client experience, making every visit as restorative as the results it
+              delivers.
+            </p>
+            <a href="https://blushnbeautyspa.com" target="_blank" rel="noopener noreferrer"
+              class="mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase pb-0.5 self-start transition-colors duration-200"
+              style="color: #04152b; border-bottom: 1px solid rgba(4,21,43,0.2);"
+              onmouseover="this.style.color='#c48259'; this.style.borderBottomColor='#c48259';"
+              onmouseout="this.style.color='#04152b'; this.style.borderBottomColor='rgba(4,21,43,0.2)';">
+              Visit Website
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- ── Card 5: Capsoil ── -->
+        <article
+          class="company-card bg-white rounded-sm border border-gray-100 flex flex-col overflow-hidden shadow-sm md:col-span-2 md:col-start-4">
+          <div class="h-1 w-full" style="background: linear-gradient(to right, #9e6340, #c48259, #d9a07a);"></div>
+          <div class="p-8 flex flex-col flex-1">
+            <!-- Logo -->
+            <div class="mb-6 h-14 flex items-center">
+              <img src="Capsoil logo.jpeg" alt="Capsoil" class="h-full w-auto object-contain" />
+            </div>
+            <span class="text-xs font-semibold tracking-widest uppercase mb-3" style="color: #c48259;">Premium
+              Solutions</span>
+            <h3 class="font-serif text-2xl font-bold text-navy mb-4 leading-snug">Capsoil</h3>
+            <p class="text-gray-500 text-sm leading-relaxed flex-1">
+              Capsoil delivers nutraceutical and wellness premium solutions. Committed to rigorous
+              standards from source to delivery, Capsoil operates with the same exacting principles that define every
+              brand in the One of A Kind portfolio — no shortcuts, no compromises, no exceptions.
+            </p>
+            <a href="https://capsoil.com" target="_blank" rel="noopener noreferrer"
+              class="mt-8 inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase pb-0.5 self-start transition-colors duration-200"
+              style="color: #04152b; border-bottom: 1px solid rgba(4,21,43,0.2);"
+              onmouseover="this.style.color='#c48259'; this.style.borderBottomColor='#c48259';"
+              onmouseout="this.style.color='#04152b'; this.style.borderBottomColor='rgba(4,21,43,0.2)';">
+              Visit Website
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+      </div><!-- /grid -->
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT THE GROUP
+  ============================================================ -->
+  <section id="about" class="py-28 bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-10">
+
+      <!-- Section label -->
+      <div class="ornament-divider mb-10">
+        <p class="text-xs font-semibold tracking-[0.3em] uppercase whitespace-nowrap" style="color: #c48259;">About the
+          Group</p>
+      </div>
+
+      <!-- Heading -->
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-navy mb-10 leading-snug max-w-3xl">
+        Built to Operate. Designed to Excel.
+      </h2>
+
+      <!-- Body copy -->
+      <div class="grid md:grid-cols-2 gap-10 text-gray-600 text-base leading-relaxed">
+        <p>
+          One of A Kind Group is a privately held parent organization that founded and actively operates five distinct
+          businesses across luxury retail, financial services, business consulting, aesthetics, and beyond. We do not
+          manage outside capital or seek external investment — we build companies from the ground up, run them with
+          hands-on leadership, and grow them for the long term. Our model is simple: find a market that deserves a
+          higher standard of service, and deliver it without compromise.
+        </p>
+        <p>
+          What unites our companies is not a shared market — it is a shared DNA. Every brand under the One of A Kind
+          Group umbrella operates with the same leadership principles, the same commitment to bespoke client
+          experiences, and the same intolerance for mediocrity. Whether we are crafting a custom piece of jewelry,
+          structuring a personalized financial plan, or engineering a growth strategy for a scaling business, the
+          standard is always the same: genuinely one of a kind.
+        </p>
+      </div>
+
+      <!-- Stat row -->
+      <div class="mt-16 grid grid-cols-3 divide-x divide-gray-200 border border-gray-200 rounded-sm">
+        <div class="py-8 px-6 text-center">
+          <p class="font-serif text-3xl font-bold text-navy mb-1">5</p>
+          <p class="text-gray-500 text-xs tracking-widest uppercase">Wholly-Founded Entities</p>
+        </div>
+        <div class="py-8 px-6 text-center">
+          <p class="font-serif text-3xl font-bold text-navy mb-1">1</p>
+          <p class="text-gray-500 text-xs tracking-widest uppercase">Operating Standard</p>
+        </div>
+        <div class="py-8 px-6 text-center">
+          <p class="font-serif text-3xl font-bold text-navy mb-1">∞</p>
+          <p class="text-gray-500 text-xs tracking-widest uppercase">Bespoke Outcomes</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT / CTA BAND
+  ============================================================ -->
+  <section id="contact" class="py-24" style="background-color: #04152b;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+      <p class="text-xs font-semibold tracking-[0.3em] uppercase mb-5 opacity-75" style="color: #d9a07a;">Get In Touch
+      </p>
+      <h2 class="font-serif text-4xl lg:text-5xl font-bold text-white mb-6 leading-snug">
+        Let's Start a Conversation
+      </h2>
+      <p class="text-gray-400 text-base leading-relaxed max-w-xl mx-auto mb-10">
+        Whether you're a client of one of our companies or have a general inquiry for One of A Kind Group, we're glad to
+        connect.
+      </p>
+      <a href="mailto:sales@oneofakindgroup.com"
+        class="inline-block px-8 py-3.5 font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300"
+        style="border: 1px solid #c48259; color: #c48259;"
+        onmouseover="this.style.backgroundColor='#c48259'; this.style.color='#04152b';"
+        onmouseout="this.style.backgroundColor='transparent'; this.style.color='#c48259';">
+        sales@oneofakindgroup.com
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="border-t py-12" style="background-color: #04152b; border-color: rgba(255,255,255,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+      <!-- Top row: logo + company links -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-10">
+
+        <!-- Logo -->
+        <div class="flex items-center gap-3">
+          <img src="1oak Logo copy.png" alt="One of A Kind Group" class="h-8 w-auto" />
+          <span class="text-white font-serif font-semibold text-base tracking-wide">
+            One of A Kind <span style="color: #d9a07a;">Group</span>
+          </span>
+        </div>
+
+        <!-- Company link list -->
+        <nav class="flex flex-wrap gap-x-8 gap-y-3">
+          <a href="#"
+            class="text-gray-400 text-xs tracking-widest uppercase transition-colors duration-200 hover:text-copper-light"
+            onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#9ca3af'">One of A Kind Jewelry</a>
+          <a href="#" class="text-gray-400 text-xs tracking-widest uppercase transition-colors duration-200"
+            onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#9ca3af'">EVS Financial Services</a>
+          <a href="https://eliyahuconsulting.netlify.app" target="_blank" rel="noopener noreferrer" class="text-gray-400 text-xs tracking-widest uppercase transition-colors duration-200"
+            onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#9ca3af'">Eliyahu Cohen
+            Consulting</a>
+          <a href="#" class="text-gray-400 text-xs tracking-widest uppercase transition-colors duration-200"
+            onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#9ca3af'">Blush 'N Beauty Medspa</a>
+          <a href="#" class="text-gray-400 text-xs tracking-widest uppercase transition-colors duration-200"
+            onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#9ca3af'">Capsoil</a>
+        </nav>
+      </div>
+
+      <!-- Bottom row -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600"
+        style="border-top: 1px solid rgba(255,255,255,0.06);">
+        <p>&copy; One of A Kind Group. All rights reserved.</p>
+        <a href="mailto:sales@oneofakindgroup.com" class="transition-colors duration-200"
+          onmouseover="this.style.color='#d9a07a'" onmouseout="this.style.color='#4b5563'">
+          sales@oneofakindgroup.com
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Hide nav on scroll down, reveal on scroll up -->
+  <script>
+    (function () {
+      const header = document.getElementById('top');
+      let lastY = window.scrollY;
+
+      window.addEventListener('scroll', function () {
+        const currentY = window.scrollY;
+        if (currentY > lastY && currentY > 80) {
+          // Scrolling down — hide
+          header.style.transform = 'translateY(-100%)';
+        } else {
+          // Scrolling up or near top — show
+          header.style.transform = 'translateY(0)';
+        }
+        lastY = currentY;
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+
+</html>
